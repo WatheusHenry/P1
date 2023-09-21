@@ -1,4 +1,7 @@
 @import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #app {
   max-width: 1280px;
@@ -11,13 +14,13 @@
 a,
 .green {
   text-decoration: none;
-  color: rgb(0, 98, 189);
+  color: rgb(183, 203, 222);
   transition: 0.4s;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(246, 100%, 37%, 0.2);
+    background-color: hsla(235, 72%, 62%, 0.2);
   }
 }
 

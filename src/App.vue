@@ -1,99 +1,67 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Sobre from './components/Sobre.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="250" height="250" />
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="50" height="50" />
+        <h1>RandKolor</h1>
+      </div>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Sobre</RouterLink>
+          <RouterLink to="/makeColor">Criar Cor</RouterLink>
+        </nav>
+      </div>
+    </header>
 
-    <div class="wrapper">
-      <h1>RandKolor</h1>
-      <nav>
-        <RouterLink to="/">Sobre</RouterLink>
-        <RouterLink to="/about">Criar Cor</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    <main class="main">
+      <RouterView />
+    </main>
+  </div>
 </template>
 
 <style scoped>
-h1 {
-  font-size: 4rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 700;
-  background: #1176cf;
-  background: linear-gradient(to right, #1176cf 15%, #ff5454 68%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.container {
+  width: auto;
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+
+header {
+  margin-top: 1rem;
+  width: 100vw;
+  position: fixed;
+  top: 0;
 }
 
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  border: 1px solid;
+  border-color: rgb(53, 55, 58);
+  border-radius: 5px;
+  width: fit-content;
+  
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+a {
+  font-weight: 700;
+
+  padding-inline: 1.6rem;
+  padding-block: 0.2rem;
+ 
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  justify-content: center;
-  display: inline-block;
-  padding: 0 2rem;
-  border: 2px solid var(--color-border);
-  border-radius: 2rem;
-}
-
-nav a:first-of-type {
-  margin-inline: 1.3rem;
-  display: inline-block;
-  padding: 0 2rem;
-  border: 2px solid var(--color-border);
-  border-radius: 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+main {
+  width: 90vw;
 }
 </style>

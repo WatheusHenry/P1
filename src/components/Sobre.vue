@@ -1,17 +1,11 @@
 <script setup>
-// defineProps({
-//   msg: {
-//     type: String,
-//     required: true
-//   }
-// })
+
 </script>
 
 <template>
   <div class="greetings">
     <h1>
-      Projeto criado para obter cores aleatorias
-
+      Projeto criado para te trazer <br/> cores aleatorias :)
     </h1>
   </div>
 </template>
@@ -19,7 +13,7 @@
 <style scoped>
 h1 {
   font-weight: 500;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   position: relative;
   top: -10px;
 }

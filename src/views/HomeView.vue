@@ -7,3 +7,8 @@ import Sobre from '../components/Sobre.vue'
     <Sobre />
   </main>
 </template>
+
+<style>
+main{
+  display: flex;
+}</style>
