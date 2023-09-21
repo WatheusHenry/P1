@@ -1,18 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import Sobre from './components/Sobre.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="250" height="250" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <h1>RandKolor</h1>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Sobre</RouterLink>
+        <RouterLink to="/about">Criar Cor</RouterLink>
       </nav>
     </div>
   </header>
@@ -21,6 +20,15 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
+h1 {
+  font-size: 4rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  background: #1176cf;
+  background: linear-gradient(to right, #1176cf 15%, #ff5454 68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -47,13 +55,19 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
+  justify-content: center;
   display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  padding: 0 2rem;
+  border: 2px solid var(--color-border);
+  border-radius: 2rem;
 }
 
 nav a:first-of-type {
-  border: 0;
+  margin-inline: 1.3rem;
+  display: inline-block;
+  padding: 0 2rem;
+  border: 2px solid var(--color-border);
+  border-radius: 2rem;
 }
 
 @media (min-width: 1024px) {
