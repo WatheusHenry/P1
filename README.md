@@ -1,35 +1,58 @@
 # randkolor
 
-This template should help get you started developing with Vue 3 in Vite.
+Esse projeto é criado para um trabalho de faculdade
 
-## Recommended IDE Setup
+## Utilizada a API thecolorapi
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[https://www.thecolorapi.com/docs](https://www.thecolorapi.com/docs).
 
-## Customize configuration
+## Funcionamento:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+É feita uma requisição para a api atravez da rota `https://www.thecolorapi.com/random` 
+onde o resultado dela é uma geração de cor aleatoria fazendo a composição da cor e o nome da mesma
 
+```sh
+const fetchColor = async () => {
+  try {
+    const response = await fetch('https://www.thecolorapi.com/random');
+    if (response.ok) {
+      const data = await response.json();
+      color.value = data;
+    } else {
+      console.error('Erro ao buscar a cor da API');
+    }
+  } catch (error) {
+    console.error('Erro ao buscar a cor da API:', error);
+  }
+};
+```
+
+Logo é rendenizado ao clickar em um botão, uma div onde será mostrada a cor solida 
+e o nome dela 
+
+```sh
+<div class="container">
+    <button @click="fetchColor">
+      <img alt="Vue logo" class="logo" :class="{ 'rotated': isRotated }" src="@/assets/logo.png" width="50" height="50" />
+    </button>
+    <div class="result" v-if="color">
+      <p>A cor é: </p>
+      <div class="color" :style="{ backgroundColor: color.hex.value, width: '400px', height: '400px', }">{{
+        color.name.value }}</div>
+    </div>
+  </div>
+```
 ## Project Setup
+
+### Ao clonar o projeto:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Para rodar a aplicação
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
