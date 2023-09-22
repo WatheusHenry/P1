@@ -38,10 +38,11 @@ h1 {
 }
 
 header {
-  margin-top: 1rem;
-  width: 100vw;
   position: fixed;
-  top: 0;
+  top: 5rem;
+  left: 8rem;
+  right: 0;
+  z-index: 100;
 }
 
 nav {
@@ -50,7 +51,7 @@ nav {
   border-color: rgb(53, 55, 58);
   border-radius: 5px;
   width: fit-content;
-  
+
 }
 
 a {
@@ -58,7 +59,7 @@ a {
 
   padding-inline: 1.6rem;
   padding-block: 0.2rem;
- 
+
 }
 
 main {
